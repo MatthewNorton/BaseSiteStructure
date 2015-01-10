@@ -1,0 +1,63 @@
+// Use Compass 
+$svg-gradient-shim-threshold: 0.1;
+@import "compass/css3";
+
+// Color Variables
+$color-base:               #000;
+$color-heading:            #373737;
+$color-subhead:            #838383;
+$color-primary:            #0069aa;
+
+$color-link:               #01A2A6;
+$color-hover:              darken($color-link, 10%);
+$color-active:             darken($color-link, 20%);
+
+$header-bg:                #1D2326;
+$footer-bg:                #333333;
+
+// Grid
+$grid-gutter: 20px;
+
+// Typography
+$font-body: Arial, sans-serif;
+$font-heading: Times New Roman, serif;
+$font-size-base: 13px;
+
+$typography-margin-bottom: 20px;
+
+// Hover background color
+$link-selection: rgba($color-primary, 0.75);
+$body-bg: #fff;
+
+// Breadcrumbs
+
+$breadcrumb-color: #231f20;
+$breadcrumb-font-size: 14px;
+$breadcrumb-current-color: $color-primary;
+$breadcrumb-type-font-color: $breadcrumb-color;
+$breadcrumb-type: font;
+
+// Slideshow
+
+$gallery-max-height: 400px;
+
+// Animation
+
+$smooth: all 0.2s ease-in-out;
+
+
+
+// SASS Functions and Modules
+@import "modules/utilities";
+
+// Third Party Partials
+@import "vendor/normalize";
+
+// Theme Partials
+// @import "partials/fonts";
+@import "layout/sprites";
+@import "layout/grid";
+@import "layout/typography";
+
+@import "layout/navigation";
+@import "layout/base";

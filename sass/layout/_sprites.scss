@@ -1,0 +1,11 @@
+/* ================================================================
+   IMAGE SPRITES
+   ================================================================ */
+$icons-sprite-dimensions: true;
+$icons-spacing: 10px !default;
+
+// Place icons in images/layout/icons and uncomment the below to use them/
+
+// @import "layout/icons/*.png";
+// @include all-icons-sprites;
+.icons-sprite {display: inline-block; }

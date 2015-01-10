@@ -1,0 +1,139 @@
+/* ================================================================
+   Typography Styles
+   ================================================================ */
+
+$typography-margin-bottom: 1.5em !default;
+
+h1 {
+	margin: 0 0 1em;
+	font-family: $font-heading;
+	@include x-rem(font-size, 37px);
+	color: $color-heading;
+}
+
+h2 {	
+	margin: 0 0 1em;
+	font-family: $font-heading;
+	@include x-rem(font-size, 20px);
+	color: #000000;
+}
+
+h3 {
+	margin: 0 0 1em;
+	font-family: $font-heading;
+	@include x-rem(font-size, 18px);
+	color: #707070;
+}
+
+h4 {
+
+}
+
+p {
+	margin: 0 0 $typography-margin-bottom;
+}
+
+// Adds custom list styles to content
+.sfContentBlock {
+	ul, ol {
+		padding-left: 1.5em;
+		margin: 0 0 $typography-margin-bottom;
+	}	
+}
+
+// Very simple blockquote styling
+blockquote {
+	border-left: 5px solid hsl(0, 0%, 85%);
+	padding-left: 1.5em;
+	margin: 1em 1.5em;
+}
+
+a {
+	color: $color-link;
+	text-decoration: none;
+	@include transition($smooth);
+
+	&:hover, &:focus {
+		color:$color-hover;
+	}
+
+	&:active{
+		color:$color-active;
+	}
+}
+
+table {
+	margin: 1em 0;
+	border: 1px solid #ccc;
+}
+
+td {
+	border: 1px solid #ccc;
+	background: hsl(0, 0%, 90%);
+	padding: 0.2em 0.4em;
+}
+
+tr:nth-child(2n) td {
+	background: #fff;
+}
+
+.button {
+	display: inline-block;
+	padding: 0.4em 1.5em;
+	background: $color-primary;
+	color: #fff;
+	border: 0;
+	border-radius: 4px;
+	font-family: $font-body;
+	text-decoration: none;
+	@include transition(all 0.2s ease-out);
+
+	&:hover, &:focus {
+		text-decoration: none;
+		background: darken($color-primary, 10%);
+	}
+}
+
+.button-small {
+	display: inline-block;
+	padding: 0.3em 1em;
+	background: $color-primary;
+	color: #fff;
+	border: 0;
+	border-radius: 4px;
+	font-family: $font-body;
+	font-size: 13px;
+	text-decoration: none;
+	@include transition(all 0.2s ease-out);
+
+	// Before/After will be used for iconfonts. Not doing this on the normal button as that will
+	// be used throughout the site and for input buttons which can't have before/after
+	&:before { 
+		position: relative;
+		left: 0;
+		padding-right: 5px; 
+		font-size: 10px;
+		@include transition(left 0.2s ease-out);
+	}
+
+	&:after { 
+		position: relative;
+		right: 0;
+		padding-left: 5px; 
+		font-size: 10px;
+		@include transition(right 0.2s ease-out);
+	}
+
+	&:hover, &:focus {
+		text-decoration: none;
+		background: darken($color-primary, 10%);
+
+		&:before {
+			left: -5px;
+		}
+
+		&:after {
+			right: -5px;
+		}
+	}	
+}

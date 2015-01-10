@@ -1,0 +1,23 @@
+// ------------------------------------------------------------------------------------------------------
+//			Navigation
+// ------------------------------------------------------------------------------------------------------
+.navigation{
+
+}
+.nav-list{
+	@extend %defaultUL;
+
+	li{
+		display:inline-block;
+	}
+	a{
+		&:hover, &:focus{
+			background:$color-hover;
+			color:#ffffff;			
+		}
+		@include breakpoint(l){
+			padding:15px;
+			display:block;
+		}
+	}
+}

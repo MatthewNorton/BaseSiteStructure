@@ -1,0 +1,21 @@
+// ------------------------------------------------------------------------------------------------------
+//			Layout & Framework
+// ------------------------------------------------------------------------------------------------------
+[class="grid-"]{
+
+}
+
+.header{
+	position: fixed;
+	top:0; left:0;
+	width: 100%;
+	background:$header-bg;
+
+	//Navigation in _navigation.scss
+}
+.main{
+
+}
+.footer{
+	background:$footer-bg;
+}

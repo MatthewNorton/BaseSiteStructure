@@ -1,0 +1,184 @@
+/* ================================================================
+   Grid Framework 
+   ================================================================ */
+
+$grid-gutter: 20px !default;
+
+
+/* ================================================================
+   Fluid Grid Styles 
+   ================================================================ */
+
+.container {
+	position:relative;
+	margin:0px auto;
+	padding:0px; 
+	width: 100%;
+	min-width:16em;
+	@include transition(all 0.1s linear);
+	@include clearfix;
+
+	@include breakpoint(l) {
+		width: 87%;
+	}
+}
+
+// Just like container, but full width
+.container-full{
+	@extend .container;
+	width: 100%;
+}
+
+.gutterless { padding:0; }
+.gutterless > [class*="grid-"] { padding:0; }
+
+[class*="grid-"] { padding:0 $grid-gutter/2; }
+[class*="grid-"] [class*="grid-"] { 
+	&:first-child {
+		padding-left: 0;
+	}
+
+	&:last-child {
+		padding-right: 0;
+	}
+}
+
+@include breakpoint(s){
+	[class*="grid-"] {
+		position:relative;
+		float: left;
+		width: 100%;
+	}
+	.s-1half [class*="grid-"] { width:50%; }
+	.s-full-grid[class*="grid-"] { width: 100%; }
+}
+
+@include breakpoint(s-m){
+	.s-m-1half [class*="grid-"] { width:50%; }
+	.s-m-1half [class*="push-"] { left:50%; }
+	.s-m-1half [class*="pull-"] { left:-50%; }
+	
+	.s-m-1third [class*="grid-"] { width:33.333%; }
+	.s-m-1third [class*="push-"] { left:33.333%; }
+	.s-m-1third [class*="pull-"] { left:-33.333%; }
+	.s-m-grid-2 { width: 16.666%}
+	.s-m-grid-4 { width: 33.333%}
+	.s-m-grid-5 { width: 41.666%}
+	.s-m-grid-6 { width: 50%}
+	.s-m-grid-7 { width: 58.333%}
+	.s-m-grid-8 { width: 66.666%}
+	.s-m-grid-10 { width: 83.333%}
+
+	// Remove padding on grids inside of grids
+	[class*="grid-"] [class*="grid-"] {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@include breakpoint(m){
+	.grid-1  { width:8.333%; }
+	.grid-2  { width:16.666%; }
+	.grid-3  { width:25%; }
+	.grid-4  { width:33.333%; }
+	.grid-5  { width:41.666%; }
+	.grid-6  { width:50%; }
+	.grid-7  { width:58.333%; }
+	.grid-8  { width:66.666%; }
+	.grid-9  { width:75%; }
+	.grid-10 { width:83.333%; }
+	.grid-11 { width:91.666%; }
+	.grid-12 { width:100%; }
+	
+	.push-1  { left:8.333%; }
+	.push-2  { left:16.666%; }
+	.push-3  { left:25%; }
+	.push-4  { left:33.333%; }
+	.push-5  { left:41.666%; }
+	.push-6  { left:50%; }
+	.push-7  { left:58.333%; }
+	.push-8  { left:66.666%; }
+	.push-9  { left:75%; }
+	.push-10 { left:83.333%; }
+	.push-11 { left:91.666%; }
+	.push-12 { left:100%; }
+	
+	.pull-1  { left:-8.333%; }
+	.pull-2  { left:-16.666%; }
+	.pull-3  { left:-25%; }
+	.pull-4  { left:-33.333%; }
+	.pull-5  { left:-41.666%; }
+	.pull-6  { left:-50%; }
+	.pull-7  { left:-58.333%; }
+	.pull-8  { left:-66.666%; }
+	.pull-9  { left:-75%; }
+	.pull-10 { left:-83.333%; }
+	.pull-11 { left:-91.666%; }
+	.pull-12 { left:-100%; }
+
+	.prefix-1  { margin-left:8.333%; }
+	.prefix-2  { margin-left:16.666%; }
+	.prefix-3  { margin-left:25%; }
+	.prefix-4  { margin-left:33.333%; }
+	.prefix-5  { margin-left:41.666%; }
+	.prefix-6  { margin-left:50%; }
+	.prefix-7  { margin-left:58.333%; }
+	.prefix-8  { margin-left:66.666%; }
+	.prefix-9  { margin-left:75%; }
+	.prefix-10 { margin-left:83.333%; }
+	.prefix-11 { margin-left:91.666%; }
+	.prefix-12 { margin-left:100%; }
+
+	.suffix-1  { margin-right:8.333%; }
+	.suffix-2  { margin-right:16.666%; }
+	.suffix-3  { margin-right:25%; }
+	.suffix-4  { margin-right:33.333%; }
+	.suffix-5  { margin-right:41.666%; }
+	.suffix-6  { margin-right:50%; }
+	.suffix-7  { margin-right:58.333%; }
+	.suffix-8  { margin-right:66.666%; }
+	.suffix-9  { margin-right:75%; }
+	.suffix-10 { margin-right:83.333%; }
+	.suffix-11 { margin-right:91.666%; }
+	.suffix-12 { margin-right:100%; }
+}
+
+@include breakpoint(m-l){
+	.m-1half [class*="grid-"] { width:50%; }
+	.m-1half [class*="push-"] { left:50%; }
+	.m-1half [class*="pull-"] { left:-50%; }
+	
+	.m-1third [class*="grid-"] { width:33.333%; }
+	.m-1third [class*="push-"] { left:33.333%; }
+	.m-1third [class*="pull-"] { left:-33.333%; }
+	
+	.m-1fourth [class*="grid-"] { width:25%; }
+	.m-1fourth [class*="push-"] { left:25%; }
+	.m-1fourth [class*="pull-"] { left:-25%; }
+	
+	.m-2thirds-left [class*="grid-"] { width:50%; }
+	.m-2thirds-left [class*="grid-"]:nth-child(2n)    { width:25%; }
+	.m-2thirds-left [class*="grid-"]:nth-child(2n+1) { width:75%; }
+	.m-2thirds-left [class*="push-"] { left:0; }
+	.m-2thirds-left [class*="pull-"] { left:0; }
+	
+	.m-2thirds-right [class*="grid-"] { width:50%; }
+	.m-2thirds-right [class*="grid-"]:nth-child(2n)    { width:75%; }
+	.m-2thirds-right [class*="grid-"]:nth-child(2n+1) { width:25%; }
+	.m-2thirds-right [class*="push-"] { left:0; }
+	.m-2thirds-right [class*="pull-"] { left:0; }	
+
+	.m-l-grid-6 { width: 50%}
+	.m-l-grid-12 { width: 100%}
+
+	.m-l-noleftpad { padding-left: 0;}
+	.m-l-norightpad { padding-right: 0;}
+}
+
+@include breakpoint(l){
+
+}
+
+@include breakpoint(xl) {
+	
+}
