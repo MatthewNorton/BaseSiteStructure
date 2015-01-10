@@ -1,19 +1,6 @@
 // ------------------------------------------------------------------------------------------------------
-//			Layout & Framework
+//			My Reset
 // ------------------------------------------------------------------------------------------------------
-[class="grid-"]{
-	background:#cccccc;
-	padding:10px 0;
-}
-
-.header{
-	background:$header-bg;
-
-	//Navigation in _navigation.scss
-}
-.main{
-
-}
-.footer{
-	background:$footer-bg;
-}
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+img { box-sizing: content-box; }
